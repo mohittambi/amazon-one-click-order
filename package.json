@@ -1,0 +1,23 @@
+{
+  "name": "amazon-one-click-order",
+  "version": "1.0.0",
+  "description": "Order from amazon and ship to any address",
+  "main": "amazon-one-click.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohittambi/amazon-one-click-order.git"
+  },
+  "author": "mohit tambi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohittambi/amazon-one-click-order/issues"
+  },
+  "homepage": "https://github.com/mohittambi/amazon-one-click-order#readme",
+  "dependencies": {
+    "casperjs": "^1.1.4",
+    "phantomjs": "^2.1.7"
+  }
+}

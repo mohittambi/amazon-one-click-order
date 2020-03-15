@@ -52,9 +52,11 @@ casper.then(function() {
   console.log("proceed to checkout");
 });
 
-casper.then(function() {
-  this.evaluate(function() {
-    document.getElementById("ap_email").value = "EMAIL_ID"
+casper.then(function () {
+  this.evaluate(function () {
+    document.getElementById("ap_email").value = "deckobooks@gmail.com"
+  });
+});
 
 casper.then(function() {
   this.evaluate(function() {
@@ -65,7 +67,7 @@ casper.then(function() {
 casper.then(function() {
   this.evaluate(function() {
     document.querySelector("input[type=password]#ap_password").value =
-      "PASSWORD";
+      "oldydecker";
   });
   console.log("password enterd");
   this.capture("screenshots/" + n + "passwordEnterd.png");
