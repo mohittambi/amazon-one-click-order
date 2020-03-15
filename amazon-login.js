@@ -47,14 +47,14 @@ casper.then(function() {
 casper.then(function() {
   this.evaluate(function() {
     document.getElementById("hlb-ptc-btn-native").click();
-	});
-	this.capture("screenshots/" + n + "productProceed.png");
+  });
+  this.capture("screenshots/" + n + "productProceed.png");
   console.log("proceed to checkout");
 });
 
-casper.then(function () {
-  this.evaluate(function () {
-    document.getElementById("ap_email").value = "deckobooks@gmail.com"
+casper.then(function() {
+  this.evaluate(function() {
+    document.getElementById("ap_email").value = "deckobooks@gmail.com";
   });
 });
 
@@ -79,50 +79,66 @@ casper.then(function() {
   });
 });
 
-
-casper.then(function () {
-	this.capture("screenshots/" + n + "beforeEdit.png");
+casper.then(function() {
   this.evaluate(function() {
     document
-      .getElementById("address-book-entry-0")
-      .childNodes[5].childNodes[1].childNodes[1].childNodes[1].childNodes[1].click();
-	});
-	this.capture("screenshots/" + n + "afterEdit.png");
+      .querySelector(
+        ".list-address-selected .address-edit-link a.a-link-normal"
+      )
+      .click();
+  });
 });
+
+// casper.then(function () {
+// 	this.capture("screenshots/" + n + "beforeEdit.png");
+//   this.evaluate(function() {
+//     document
+//       .getElementById("address-book-entry-0")
+//       .childNodes[5].childNodes[1].childNodes[1].childNodes[1].childNodes[1].click();
+// 	});
+// 	this.capture("screenshots/" + n + "afterEdit.png");
+// });
 
 casper.then(function() {
   this.evaluate(function() {
-    document.querySelector("input[type=text]#enterAddressFullName").value =
-      "Joy Singh";
-    document.querySelector("input[type=text]#enterAddressAddressLine1").value =
-      "D 10 San Josh";
-    document.querySelector("input[type=text]#enterAddressAddressLine2").value =
-      "Chandpole";
-    document.querySelector("input[type=text]#enterAddressCity").value =
-      "Jaipur";
-    document.querySelector("input[type=text]#enterAddressStateOrRegion").value =
-      "Rajasthan";
-    document.querySelector("input[type=text]#enterAddressPostalCode").value =
-      "302001";
-    document.getElementById("enterAddressCountryCode").value = "GH";
-	});
-	this.capture("screenshots/" + n + "editAddress.png");
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressFullName"
+    ).value = "Lindsey Mocek";
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressAddressLine1"
+    ).value = "";
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressAddressLine2"
+    ).value = "";
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressCity"
+    ).value = "Wichita";
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressStateOrRegion"
+    ).value = "KS";
+    document.querySelector(
+      "input[type=text]#address-ui-widgets-enterAddressPostalCode"
+    ).value = "67203";
+  });
+  this.capture("screenshots/" + n + "editAddress.png");
   console.log("address edited");
 });
 
 casper.then(function() {
   this.evaluate(function() {
     document
-      .querySelector("input[type=submit]#fromAddressEditToContinue")
+      .querySelector(
+        "input[type=submit]#address-ui-widgets-fromAddressEditToContinue"
+      )
       .click();
   });
 });
 
-casper.then(function () {
-	this.evaluate(function () {
-		document.querySelector("input[type=submit].a-button-text").click();
-	});
-	this.capture("screenshots/" + n + "afterEdit.png");
+casper.then(function() {
+  this.evaluate(function() {
+    document.querySelector("input[type=submit].a-button-text").click();
+  });
+  this.capture("screenshots/" + n + "afterEdit.png");
   console.log("after edited");
 });
 
@@ -136,14 +152,14 @@ casper.then(function() {
   });
 });
 
-casper.then(function () {
-	this.evaluate(function () {
-		document
-			.querySelector("input[type=submit]#proceedToRetailCheckout")
-			.click();
-	});
-	this.capture("screenshots/" + n + "afterCheckout.png");
-	console.log("after checkout");
+casper.then(function() {
+  this.evaluate(function() {
+    document
+      .querySelector("input[type=submit]#proceedToRetailCheckout")
+      .click();
+  });
+  this.capture("screenshots/" + n + "afterCheckout.png");
+  console.log("after checkout");
 });
 
 //Wait to be redirected to the Home page, and then make a screenshot
